@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Damagable : MonoBehaviour
+public class Absorber : MonoBehaviour
 {
+    public Rigidbody2D RBody { get; private set; }
     public Collider2D Collider { get; private set; }
 
     private void Start()
     {
+        RBody = GetComponent<Rigidbody2D>();
         Collider = GetComponent<Collider2D>();
     }
 
@@ -16,12 +19,7 @@ public class Damagable : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ballistic")
         {
-            GetHit();
+            Destroy(collision.gameObject);
         }
-    }
-
-    private void GetHit()
-    {
-
     }
 }

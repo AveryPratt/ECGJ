@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3184233499919383699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 5, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,7 +105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.1428571, y: 0.1428571}
   m_EdgeRadius: 0
 --- !u!114 &5763833110819684985
 MonoBehaviour:
@@ -122,4 +122,5 @@ MonoBehaviour:
   Target: {fileID: 0}
   ShotPrefab: {fileID: 9012157115176480845, guid: 6875dedb63dfa18438f22a6b53af5468,
     type: 3}
-  ShotInterval: 3
+  ShotInterval: 1
+  ShotAngle: 90
