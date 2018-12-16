@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 336444480438885658}
   - component: {fileID: 5217294992272748157}
   - component: {fileID: 3184233499919383700}
-  - component: {fileID: 3726952962001474216}
   m_Layer: 0
-  m_Name: Player
+  m_Name: CrumbleBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,15 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9507c272b9af64d864cd2960623bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3726952962001474216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3184233499919383699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c296b071c618945a8dc62789a5c554, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Health: 3
+  StartColor: {r: 0.99636734, g: 1, b: 0, a: 1}
+  EndColor: {r: 1, g: 0, b: 0, a: 0.2509804}

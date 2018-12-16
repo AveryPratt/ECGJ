@@ -32,12 +32,31 @@ public class DragController : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("HitScreen")))
             {
-                Target.transform.position = hit.point;
+                Vector2 position;
+                bool limited = LimitPosition(hit.point, out position);
+                Target.transform.position = position;
+
+                if (limited)
+                {
+                    Target = null;
+                }
             }
             else
             {
                 Debug.Log("Mouse is off HitScreen");
             }
         }
+    }
+
+    private bool LimitPosition(Vector2 original, out Vector2 newPos)
+    {
+        newPos = original;
+        float magnitude = Vector2.SqrMagnitude(original - Target.Original);
+        if (magnitude > Target.MaxDragDistance)
+        {
+            newPos = Vector2.Lerp(Target.Original, newPos, Target.MaxDragDistance / magnitude);
+            return true;
+        }
+        return false;
     }
 }

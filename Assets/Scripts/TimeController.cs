@@ -34,13 +34,13 @@ public class TimeController : MonoBehaviour
 
     private void CountStallTime()
     {
-        if (StallTime > 0)
+        if (StallTime < StallTimeDuration)
         {
-            StallTime -= Time.unscaledDeltaTime;
-            if (StallTime < 0)
+            StallTime += Time.unscaledDeltaTime;
+            if (StallTime > StallTimeDuration)
             {
                 TryResumeTime();
-                StallTime = 0;
+                StallTime = StallTimeDuration;
             }
         }
     }
@@ -63,7 +63,7 @@ public class TimeController : MonoBehaviour
         {
             Running = false;
             Time.timeScale = 0;
-            StallTime = StallTimeDuration;
+            StallTime = 0;
         }
     }
 
@@ -74,6 +74,7 @@ public class TimeController : MonoBehaviour
             Running = true;
             Time.timeScale = 1;
             Cooldown = CooldownDuration;
+            StallTime = StallTimeDuration;
         }
     }
 }
