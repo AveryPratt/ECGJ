@@ -29,7 +29,6 @@ public class Dragable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log(Original);
         if (!TimeController.Running && !Dragged)
         {
             Original = transform.position;

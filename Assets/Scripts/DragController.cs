@@ -48,15 +48,20 @@ public class DragController : MonoBehaviour
         }
     }
 
-    private bool LimitPosition(Vector2 original, out Vector2 newPos)
+    private bool LimitPosition(Vector2 mousePos, out Vector2 newPos)
     {
-        newPos = original;
-        float magnitude = Vector2.SqrMagnitude(original - Target.Original);
-        if (magnitude > Target.MaxDragDistance)
+        float sqrMagnitude = Vector2.SqrMagnitude(mousePos - Target.Original);
+        float sqrDragDist = Mathf.Pow(Target.MaxDragDistance, 2);
+
+        if (sqrMagnitude > sqrDragDist)
         {
-            newPos = Vector2.Lerp(Target.Original, newPos, Target.MaxDragDistance / magnitude);
+            newPos = Target.transform.position;
             return true;
         }
-        return false;
+        else
+        {
+            newPos = mousePos;
+            return false;
+        }
     }
 }

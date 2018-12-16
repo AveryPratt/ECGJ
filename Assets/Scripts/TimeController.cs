@@ -14,6 +14,7 @@ public class TimeController : MonoBehaviour
     private void Start()
     {
         Running = Time.timeScale > 0;
+        StallTime = StallTimeDuration;
     }
 
     private void Update()

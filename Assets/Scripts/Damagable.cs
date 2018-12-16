@@ -33,6 +33,9 @@ public class Damagable : Absorber
     private void Update()
     {
         float value = (MaxHealth - Health) / (MaxHealth - 1);
-        Renderer.material.color = Color.Lerp(StartColor, EndColor, value);
+        if (MaxHealth > 1)
+        {
+            Renderer.material.color = Color.Lerp(StartColor, EndColor, value);
+        }
     }
 }
