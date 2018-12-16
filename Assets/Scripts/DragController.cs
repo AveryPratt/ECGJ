@@ -5,18 +5,22 @@ using UnityEngine;
 public class DragController : MonoBehaviour
 {
     public Dragable Target { get; set; }
+    private TimeController TimeController;
+
+    private void Start()
+    {
+        TimeController = FindObjectOfType<TimeController>();
+    }
 
     private void Update()
     {
-
-        if (Input.GetMouseButton(0))
-        {
-            Drag();
-        }
-
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || TimeController.Running)
         {
             Target = null;
+        }
+        else if (Input.GetMouseButton(0))
+        {
+            Drag();
         }
     }
 

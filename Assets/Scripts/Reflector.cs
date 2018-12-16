@@ -2,30 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Collider2D))]
-public class Reflector : MonoBehaviour
+public class Reflector : Absorber
 {
-    public Rigidbody2D RBody { get; private set; }
-    public Collider2D Collider { get; private set; }
-
-    private void Start()
-    {
-        RBody = GetComponent<Rigidbody2D>();
-        Collider = GetComponent<Collider2D>();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void Absorb(Collider2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.tag == "Ballistic")
-        {
-            Reflect(other);
-        }
-    }
-
-    private void Reflect(GameObject other)
-    {
         Rigidbody2D rbody = other.GetComponent<Rigidbody2D>();
         Vector2 offset = other.transform.position - transform.position;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Absorber : MonoBehaviour
+public abstract class Absorber : MonoBehaviour
 {
     public Rigidbody2D RBody { get; private set; }
     public Collider2D Collider { get; private set; }
@@ -19,7 +19,9 @@ public class Absorber : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ballistic")
         {
-            Destroy(collision.gameObject);
+            Absorb(collision);
         }
     }
+
+    protected abstract void Absorb(Collider2D collision);
 }

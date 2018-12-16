@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damagable : Absorber
+public class Invincible : Absorber
 {
     protected override void Absorb(Collider2D collision)
     {
         Destroy(collision.gameObject);
-        Destroy(gameObject);
     }
 }

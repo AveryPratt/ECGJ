@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Dragable : MonoBehaviour
 {
-    private DragController Controller;
+    private DragController DragController;
+    private TimeController TimeController;
 
     private void Start()
     {
-        Controller = FindObjectOfType<DragController>();
+        DragController = FindObjectOfType<DragController>();
+        TimeController = FindObjectOfType<TimeController>();
     }
 
     private void OnMouseDown()
     {
-        Controller.Target = this;
+        if (!TimeController.Running)
+        {
+            DragController.Target = this;
+        }
     }
 }
