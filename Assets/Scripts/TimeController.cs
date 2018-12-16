@@ -22,7 +22,7 @@ public class TimeController : MonoBehaviour
         CountStallTime();
         CountCooldown();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Cooldown <= 0)
         {
             TryStopTime();
         }

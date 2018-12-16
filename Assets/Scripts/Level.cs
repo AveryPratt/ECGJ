@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,26 @@ public class Level : MonoBehaviour
 
     public void CompleteLevel()
     {
-        LevelManager.LoadNextLevel();
+        if (LevelManager)
+        {
+            LevelManager.LoadNextLevel();
+        }
+    }
+
+    public void SkipToLevel(int idx)
+    {
+        if (LevelManager)
+        {
+            LevelManager.LoadLevel(idx);
+        }
+    }
+
+    public void SkipToLevel(string idx)
+    {
+        int newIdx;
+        if(Int32.TryParse(idx, out newIdx))
+        {
+            SkipToLevel(newIdx);
+        }
     }
 }

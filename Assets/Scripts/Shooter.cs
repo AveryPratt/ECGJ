@@ -24,8 +24,6 @@ public class Shooter : MonoBehaviour
 
     private void Shoot()
     {
-        ShotPrefab.transform.position = transform.position;
-
         float angle = ShotAngle;
 
         if (Target)
@@ -37,5 +35,6 @@ public class Shooter : MonoBehaviour
         ShotPrefab.transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
 
         Shootable shot = Instantiate(ShotPrefab);
+        shot.transform.position = transform.position;
     }
 }

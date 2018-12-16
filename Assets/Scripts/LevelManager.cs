@@ -46,6 +46,11 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel(int levelIdx)
     {
         CurrentLevel = levelIdx;
+
+        if (CurrentLevel > HighestLevel)
+        {
+            HighestLevel = CurrentLevel;
+        }
         SceneManager.LoadScene(CurrentLevel);
     }
 }
