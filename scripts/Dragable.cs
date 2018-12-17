@@ -23,10 +23,7 @@ public class Dragable : MonoBehaviour
 
     private void Update()
     {
-        if (DragCollider)
-        {
-            DragCollider.gameObject.SetActive(!TimeController.Running);
-        }
+        DragCollider.gameObject.SetActive(!TimeController.Running);
 
         if (Dragged && TimeController.Running)
         {
