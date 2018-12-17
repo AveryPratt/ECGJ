@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 336444480438885658}
   - component: {fileID: 5217294992272748157}
   - component: {fileID: 5763833110819684985}
+  - component: {fileID: 1138034994109690307}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -124,3 +125,15 @@ MonoBehaviour:
     type: 3}
   ShotInterval: 1
   ShotAngle: 90
+--- !u!114 &1138034994109690307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3184233499919383699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da862ee875303894fbca9a0294323e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

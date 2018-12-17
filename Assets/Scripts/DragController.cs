@@ -16,6 +16,7 @@ public class DragController : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0) || TimeController.Running)
         {
+            Target.Released = true;
             Target = null;
         }
         else if (Input.GetMouseButton(0))
