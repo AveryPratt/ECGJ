@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dragable : MonoBehaviour
 {
+    public CircleCollider2D DragCollider { get; private set; }
     public Vector2 Original { get; private set; }
     public bool Dragged { get; private set; }
 
@@ -14,6 +15,7 @@ public class Dragable : MonoBehaviour
 
     private void Start()
     {
+        DragCollider = GetComponentInChildren<CircleCollider2D>();
         DragController = FindObjectOfType<DragController>();
         TimeController = FindObjectOfType<TimeController>();
         Dragged = false;
@@ -21,6 +23,8 @@ public class Dragable : MonoBehaviour
 
     private void Update()
     {
+        DragCollider.gameObject.SetActive(!TimeController.Running);
+
         if (Dragged && TimeController.Running)
         {
             Dragged = false;
