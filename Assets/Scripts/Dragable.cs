@@ -10,8 +10,10 @@ public class Dragable : MonoBehaviour
     public Vector2 Original { get; private set; }
     public bool Dragged { get; private set; }
     public bool Released { get; set; }
+    public GameObject RangeIndicator { get; private set; }
 
     public float MaxDragDistance = 3;
+    public GameObject RangeIndicatorPrefab;
 
     private DragController DragController;
     private TimeController TimeController;
@@ -59,6 +61,9 @@ public class Dragable : MonoBehaviour
             Original = transform.position;
             Dragged = true;
             DragController.Target = this;
+
+            RangeIndicator = Instantiate(RangeIndicatorPrefab);
+            RangeIndicator.transform.position = transform.position;
         }
     }
 }

@@ -11,10 +11,13 @@ public class TimeController : MonoBehaviour
     public float CooldownDuration = 1;
     public float StallTimeDuration = 3;
 
+    private TutorialController Tutorial;
+
     private void Start()
     {
         Running = Time.timeScale > 0;
         StallTime = StallTimeDuration;
+        Tutorial = FindObjectOfType<TutorialController>();
     }
 
     private void Update()
@@ -25,6 +28,11 @@ public class TimeController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && Cooldown <= 0)
         {
             TryStopTime();
+
+            if (Tutorial && Tutorial.TaskNumber == 0)
+            {
+                Tutorial.CompleteTask1();
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.Space))

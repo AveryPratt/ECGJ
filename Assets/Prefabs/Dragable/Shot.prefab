@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 504b6b4fdb433f24a844e46ab7ee82a5, type: 2}
+  - {fileID: 2100000, guid: 590479d518031c94e853f094c1d8021b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDragDistance: 3
+  RangeIndicatorPrefab: {fileID: 2319230211794389348, guid: 48c8fcfa12152314194ef190307cddb4,
+    type: 3}
 --- !u!1 &8885787185021789040
 GameObject:
   m_ObjectHideFlags: 0
