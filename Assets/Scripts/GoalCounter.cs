@@ -6,12 +6,34 @@ using UnityEngine;
 public class GoalCounter : MonoBehaviour
 {
     public int GoalCount { get; set; }
+
+    public CanvasGroup VictoryCanvasGroup;
+
     private Level Level;
+    private float VictoryTimer = 0;
+    private bool Victorious = false;
+    private AudioManager AudioManager;
 
     private void Start()
     {
         GoalCount = GetComponentsInChildren<Goal>().Length;
         Level = FindObjectOfType<Level>();
+        AudioManager = FindObjectOfType<AudioManager>();
+    }
+
+    private void Update()
+    {
+        if (Victorious)
+        {
+            VictoryTimer += Time.unscaledDeltaTime;
+
+            if (VictoryTimer > 3)
+            {
+                Continue();
+            }
+
+            VictoryCanvasGroup.alpha = VictoryTimer;
+        }
     }
 
     public void ReachGoal()
@@ -20,7 +42,13 @@ public class GoalCounter : MonoBehaviour
 
         if (GoalCount == 0)
         {
-            Level.CompleteLevel();
+            Victorious = true;
+            AudioManager.Victory.Play();
         }
+    }
+
+    private void Continue()
+    {
+        Level.CompleteLevel();
     }
 }

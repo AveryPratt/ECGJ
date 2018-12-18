@@ -9,10 +9,13 @@ public abstract class Absorber : MonoBehaviour
     public Rigidbody2D RBody { get; private set; }
     public Collider2D Collider { get; private set; }
 
+    protected AudioManager AudioManager { get; private set; }
+
     private void Start()
     {
         RBody = GetComponent<Rigidbody2D>();
         Collider = GetComponent<Collider2D>();
+        AudioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

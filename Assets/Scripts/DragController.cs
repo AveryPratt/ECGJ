@@ -8,11 +8,13 @@ public class DragController : MonoBehaviour
 
     private TimeController TimeController;
     private TutorialController Tutorial;
+    private AudioManager AudioManager;
 
     private void Start()
     {
         TimeController = FindObjectOfType<TimeController>();
         Tutorial = FindObjectOfType<TutorialController>();
+        AudioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -27,6 +29,8 @@ public class DragController : MonoBehaviour
             Target.Released = true;
             Destroy(Target.RangeIndicator);
             Target = null;
+
+            AudioManager.Drop.Play();
         }
         else if (Input.GetMouseButton(0))
         {

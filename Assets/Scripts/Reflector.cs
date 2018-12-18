@@ -23,5 +23,7 @@ public class Reflector : Absorber
         float angle = Vector2.SignedAngle(rbody.velocity, newVel);
         other.transform.Rotate(Vector3.forward, angle);
         rbody.velocity = newVel;
+
+        AudioManager.Reflect.Play();
     }
 }

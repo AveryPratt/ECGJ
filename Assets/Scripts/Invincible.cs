@@ -7,5 +7,6 @@ public class Invincible : Absorber
     protected override void Absorb(Collider2D collision)
     {
         Destroy(collision.gameObject);
+        AudioManager.Collide.Play();
     }
 }
