@@ -38,7 +38,6 @@ public class TutorialController : MonoBehaviour
         {
             CanvasGroup.alpha = alpha;
         }
-        Debug.Log(alpha);
 
         if (TaskNumber == 0)
         {

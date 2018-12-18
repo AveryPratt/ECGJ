@@ -29,7 +29,10 @@ public class Damagable : Absorber
             Destroy(gameObject);
         }
 
-        AudioManager.Collide.Play();
+        if (AudioManager)
+        {
+            AudioManager.Collide.Play();
+        }
     }
 
     private void Update()

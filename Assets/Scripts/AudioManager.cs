@@ -19,5 +19,7 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         LowPassFilter.cutoffFrequency = 400 + Time.timeScale * 10000;
+        Music.Pause();
+        Music.Play();
     }
 }

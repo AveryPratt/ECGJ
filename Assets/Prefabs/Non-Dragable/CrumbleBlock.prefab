@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9507c272b9af64d864cd2960623bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 1
   StartColor: {r: 0.99636734, g: 1, b: 0, a: 1}
   EndColor: {r: 1, g: 0, b: 0, a: 0.2509804}
 --- !u!114 &1908494002806190417
